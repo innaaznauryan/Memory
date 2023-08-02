@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.board {
+    width: clamp(100px, 99vmin, 700px);
+    aspect-ratio: 1;
+    border: 2px solid darkolivegreen;
+    border-radius: 5px;
+    margin: 0 auto;
+    padding: 3px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    background-color: lightgreen;
+    .cell-container {
+        position: relative;
+        perspective: 500px;
+        transition: .5s;
+        .cell{
+            background-color: darkolivegreen;
+            color: lightgreen;
+            display: grid;
+            place-content: center;
+            user-select: none;
+        }
+        .cell-back{
+            background-color: lightgreen;
+            background-position: center center;
+            background-size: cover;
+            rotate: y -180deg;
+        }
+        & > * {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            transition: .5s;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    }
+    .active {
+        .cell {
+            rotate: y 180deg;
+        }
+        .cell-back{
+            rotate: y 0deg;
+        }
+    }
+    .vanish {
+        scale: 0;
+    }
+}
