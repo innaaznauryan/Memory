@@ -7,6 +7,10 @@ Clone the repo:
 
 git clone https://github.com/innaaznauryan/Memory 
 
+Navigate to the folder:
+
+cd Memory
+
 Install npm packages:
 
 npm install
