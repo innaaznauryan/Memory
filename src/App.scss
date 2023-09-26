@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    background-color: lightblue;
+}
 .board {
     width: clamp(100px, 99vmin, 700px);
     aspect-ratio: 1;
